@@ -7,8 +7,11 @@ def columnCleaner(path, columns, date = "2011-02-14"):
     columns: the columns that we want to fit
     date: the date range we want for the SP500
 
-    import pandas, numpy, and matplotlib to use function
     """
+
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
 
     messy_obs = pd.read_csv(path)
     #read the csv file
@@ -20,7 +23,7 @@ def columnCleaner(path, columns, date = "2011-02-14"):
     #pivot the table
 
     normalize = lambda col: (col-col.mean())/col.std()
-    normed_obs = obs_pivot = obs.apply(normalize, axis=0)
+    normed_obs = obs_pivot = obs_pivot.apply(normalize, axis=0)
     #normalize data
 
     observations = normed_obs[normed_obs.index >= date]
