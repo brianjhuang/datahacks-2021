@@ -21,6 +21,9 @@ def columnCleaner(path, columns, date="2011-02-14"):
 
     obs_pivot = messy_obs.pivot(values="value", index="date", columns="series_id")
     # pivot the table
+    
+    mu = obs_pivot["SP500"].mean()
+    s = obs_pivot["SP500"].std()
 
     normalize = lambda col: (col - col.mean()) / col.std()
     normed_obs = obs_pivot = obs_pivot.apply(normalize, axis=0)
@@ -56,4 +59,4 @@ def columnCleaner(path, columns, date="2011-02-14"):
 
     df.reset_index(inplace=True)
 
-    return df
+    return df, mu, s
