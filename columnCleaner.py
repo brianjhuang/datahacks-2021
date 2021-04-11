@@ -49,5 +49,6 @@ def columnCleaner(path, columns, date = "2011-02-14"):
         df[str(col)] = fit_column
         #adds that column to our dataframe
 
+    df.reset_index(inplace = True)
 
     return df
