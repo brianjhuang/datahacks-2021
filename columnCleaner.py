@@ -36,9 +36,14 @@ def columnCleaner(path, columns, date="2011-02-14"):
     # code above organizes table into usable format
 
     for col in columns:
-        fit = pd.DataFrame({"ds": observations.index, str(col): observations[str(col)]})
+        try:
+            fit = pd.DataFrame(
+                {"ds": observations.index, str(col): observations[str(col)]}
+            )
+        except:
+            print(f"Dropping Column: {col}")
+            continue
         # create our table for the column entry in our columns list
-
         fit.fillna(method="bfill", inplace=True)
         fit.fillna(method="ffill", inplace=True)
         # filter out any null values

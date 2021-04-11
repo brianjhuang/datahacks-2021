@@ -30,6 +30,7 @@ def forecastTable(m, horizon, train_data, test_data, columns):
 
     future = m.make_future_dataframe(periods=horizon)
     future.set_index(pd.to_datetime(future["ds"]), inplace=True)
+    future.drop(columns="ds", inplace=True)
 
     for c in columns:
         train_feature = train_obs.query(f"""series_id == '{c}'""")
@@ -43,7 +44,7 @@ def forecastTable(m, horizon, train_data, test_data, columns):
     future.reset_index(inplace=True)
 
     # assert no nans
-    assert all(future[columns].isna().sum() == 0)
+    assert all(future.isna().sum() == 0)
 
     # run forecasting
     forecast = m.predict(future)
