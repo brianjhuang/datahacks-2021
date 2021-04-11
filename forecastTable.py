@@ -35,8 +35,11 @@ def forecastTable(m, horizon, train_data, test_data, columns):
     for c in columns:
         train_feature = train_obs.query(f"""series_id == '{c}'""")
         train_feature.set_index(pd.to_datetime(train_feature["date"]), inplace=True)
+        train_feature = train_feature.filter(future.index, axis="index")
         test_feature = test_obs.query(f"""series_id == '{c}'""")
         test_feature.set_index(pd.to_datetime(test_feature["date"]), inplace=True)
+        test_feature = test_feature.filter(future.index, axis="index")
+
         future[c] = normalize(train_feature["value"].append(test_feature["value"]))
         future[c].fillna(method="bfill", inplace=True)
         future[c].fillna(method="ffill", inplace=True)

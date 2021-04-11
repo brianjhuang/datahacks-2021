@@ -1,4 +1,4 @@
-def columnCleaner(path, columns, date="2011-02-14"):
+def columnCleaner(path, columns, date="2011-02-14", normalize_sp5=True):
 
     """
     This function cleans and returns a dataframe that can be fit to our Prophet model.
@@ -21,15 +21,22 @@ def columnCleaner(path, columns, date="2011-02-14"):
 
     obs_pivot = messy_obs.pivot(values="value", index="date", columns="series_id")
     # pivot the table
+    obs_pivot = obs_pivot[obs_pivot.index >= date]
+
+    mu = obs_pivot["SP500"].mean()
+    s = obs_pivot["SP500"].std()
 
     normalize = lambda col: (col - col.mean()) / col.std()
-    normed_obs = obs_pivot = obs_pivot.apply(normalize, axis=0)
+    normed_obs = obs_pivot.apply(normalize, axis=0)
     # normalize data
 
     observations = normed_obs[normed_obs.index >= date]
     # filter out any dates that are before designated date
 
-    df = pd.DataFrame({"ds": observations.index, "y": observations["SP500"]})
+    if normalize_sp5:
+        df = pd.DataFrame({"ds": observations.index, "y": observations["SP500"]})
+    else:
+        df = pd.DataFrame({"ds": observations.index, "y": obs_pivot["SP500"]})
     df.set_index("ds", inplace=True)
     # create the dataframe we return
 
@@ -56,4 +63,4 @@ def columnCleaner(path, columns, date="2011-02-14"):
 
     df.reset_index(inplace=True)
 
-    return df
+    return df, mu, s
