@@ -14405,7 +14405,7 @@ div.jp-OutputPrompt {
 <ul>
 <li><strong>Pivoting</strong>: In order to format the data into a more usable manner, we pivotted the table to set the time series as columns and the observations as row values. This allowed us to visualize and access individual time series entries more effectively</li>
 </ul>
-<p><img src="pivot.png" alt="Alt" title="Title"></p>
+<p><img src="pivot.png" alt="Alt" title="Pivot"></p>
 
 </div>
 </div></section></section><section><section>
@@ -14419,7 +14419,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">obs_pivot</span> <span class="o">=</span> <span class="n">messy_obs</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;series_id&quot;</span><span class="p">)</span>
@@ -14446,7 +14446,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">normed_obs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14465,7 +14465,7 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -14679,12 +14679,12 @@ div.jp-OutputPrompt {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">observations</span> <span class="o">=</span> <span class="n">normed_obs</span><span class="p">[</span><span class="n">normed_obs</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="s1">&#39;02-14-2011&#39;</span><span class="p">]</span>
 <span class="c1"># filter out any dates that are before designated date</span>
-<span class="n">observations</span>
+<span class="n">observations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14700,7 +14700,7 @@ div.jp-OutputPrompt {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -14778,7 +14778,7 @@ div.jp-OutputPrompt {
       <td>-0.191647</td>
       <td>0.614001</td>
       <td>0.263285</td>
-      <td>-0.141480</td>
+      <td>-0.14148</td>
       <td>0.058255</td>
       <td>-0.590029</td>
       <td>-0.772034</td>
@@ -14802,7 +14802,7 @@ div.jp-OutputPrompt {
       <td>-0.191647</td>
       <td>0.614001</td>
       <td>0.263285</td>
-      <td>-0.141480</td>
+      <td>-0.14148</td>
       <td>0.058255</td>
       <td>-0.590029</td>
       <td>-0.781610</td>
@@ -14826,7 +14826,7 @@ div.jp-OutputPrompt {
       <td>-0.191647</td>
       <td>0.614001</td>
       <td>0.263285</td>
-      <td>-0.141480</td>
+      <td>-0.14148</td>
       <td>0.058255</td>
       <td>-0.590029</td>
       <td>-0.781610</td>
@@ -14850,7 +14850,7 @@ div.jp-OutputPrompt {
       <td>-0.152405</td>
       <td>0.614001</td>
       <td>0.263285</td>
-      <td>-0.141480</td>
+      <td>-0.14148</td>
       <td>0.058255</td>
       <td>-0.590029</td>
       <td>-0.785630</td>
@@ -14874,7 +14874,7 @@ div.jp-OutputPrompt {
       <td>-0.126244</td>
       <td>0.614001</td>
       <td>0.263285</td>
-      <td>-0.141480</td>
+      <td>-0.14148</td>
       <td>0.058255</td>
       <td>-0.590029</td>
       <td>-0.799699</td>
@@ -14891,153 +14891,9 @@ div.jp-OutputPrompt {
       <td>1.637112</td>
       <td>-0.540650</td>
     </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2017-12-27</th>
-      <td>-1.310724</td>
-      <td>-0.503413</td>
-      <td>-1.198856</td>
-      <td>-4.235157</td>
-      <td>-1.391251</td>
-      <td>-3.300864</td>
-      <td>-1.399615</td>
-      <td>-1.344031</td>
-      <td>-0.819915</td>
-      <td>-0.149333</td>
-      <td>...</td>
-      <td>-0.070521</td>
-      <td>0.763859</td>
-      <td>2.119963</td>
-      <td>-0.353719</td>
-      <td>-0.405003</td>
-      <td>1.719144</td>
-      <td>1.727352</td>
-      <td>2.646145</td>
-      <td>-1.151405</td>
-      <td>-0.525902</td>
-    </tr>
-    <tr>
-      <th>2017-12-28</th>
-      <td>-1.310724</td>
-      <td>-0.503413</td>
-      <td>-1.198856</td>
-      <td>-4.235157</td>
-      <td>-1.391251</td>
-      <td>-3.300864</td>
-      <td>-1.399615</td>
-      <td>-1.344031</td>
-      <td>-0.848053</td>
-      <td>-0.120606</td>
-      <td>...</td>
-      <td>-0.070521</td>
-      <td>0.763859</td>
-      <td>2.132365</td>
-      <td>-0.304964</td>
-      <td>-0.286109</td>
-      <td>1.719144</td>
-      <td>1.727352</td>
-      <td>2.646145</td>
-      <td>-1.151405</td>
-      <td>-0.537741</td>
-    </tr>
-    <tr>
-      <th>2017-12-29</th>
-      <td>-1.310724</td>
-      <td>-0.503413</td>
-      <td>-1.185775</td>
-      <td>-4.235157</td>
-      <td>-1.391251</td>
-      <td>-3.300864</td>
-      <td>-1.399615</td>
-      <td>-1.344031</td>
-      <td>-0.878673</td>
-      <td>-0.080388</td>
-      <td>...</td>
-      <td>-0.070521</td>
-      <td>0.763859</td>
-      <td>2.097250</td>
-      <td>-0.304964</td>
-      <td>-0.286109</td>
-      <td>1.719144</td>
-      <td>1.727352</td>
-      <td>2.646145</td>
-      <td>-1.151405</td>
-      <td>-0.434402</td>
-    </tr>
-    <tr>
-      <th>2017-12-30</th>
-      <td>-1.310724</td>
-      <td>-0.503413</td>
-      <td>-1.185775</td>
-      <td>-4.235157</td>
-      <td>-1.391251</td>
-      <td>-3.300864</td>
-      <td>-1.399615</td>
-      <td>-1.344031</td>
-      <td>-0.878673</td>
-      <td>-0.080388</td>
-      <td>...</td>
-      <td>-0.070521</td>
-      <td>0.763859</td>
-      <td>2.097250</td>
-      <td>-0.304964</td>
-      <td>-0.286109</td>
-      <td>1.719144</td>
-      <td>1.727352</td>
-      <td>2.646145</td>
-      <td>-1.151405</td>
-      <td>-0.188295</td>
-    </tr>
-    <tr>
-      <th>2017-12-31</th>
-      <td>-1.310724</td>
-      <td>-0.503413</td>
-      <td>-1.185775</td>
-      <td>-4.235157</td>
-      <td>-1.391251</td>
-      <td>-3.300864</td>
-      <td>-1.399615</td>
-      <td>-1.344031</td>
-      <td>-0.878673</td>
-      <td>-0.080388</td>
-      <td>...</td>
-      <td>-0.070521</td>
-      <td>0.763859</td>
-      <td>2.097250</td>
-      <td>-0.304964</td>
-      <td>-0.286109</td>
-      <td>1.719144</td>
-      <td>1.727352</td>
-      <td>2.646145</td>
-      <td>-1.151405</td>
-      <td>0.235496</td>
-    </tr>
   </tbody>
 </table>
-<p>2513 rows × 68 columns</p>
+<p>5 rows × 68 columns</p>
 </div>
 </div>
 
@@ -15047,6 +14903,153 @@ div.jp-OutputPrompt {
 
 </div>
 
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Prophet">Prophet<a class="anchor-link" href="#Prophet">&#182;</a></h1><p><img src="prophet.png" alt="Alt" title="Prophet"></p>
+
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="What-is-Prophet?">What is Prophet?<a class="anchor-link" href="#What-is-Prophet?">&#182;</a></h1><ul>
+<li>Developed by Facebook in 2018 for internal business applications use- </li>
+<li>Considered state-of-the-art for at-scale processing</li>
+<li>Generalized Additive Model (GAM):</li>
+</ul>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="prophet-icon-hero.jpg" alt="Alt" title="Prophet"></p>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Model">Model<a class="anchor-link" href="#Model">&#182;</a></h1><p><strong>Pros:</strong></p>
+<ul>
+<li>Drop-in, ease of use, automatic</li>
+<li>Multiple regressors</li>
+<li>Better for non-stationary data without having to adjust for stationarity</li>
+<li>Fast, many models can be tested at once</li>
+<li>Automatic changepoint detection (useful to find changes in market sentiment, like around a pandemic) 
+<br></li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Slower cross-validation</li>
+<li>Somewhat of a black box - more on this later</li>
+</ul>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+$$y(t) = g(t) +  s(t) + h(t) + \epsilon_t$$<p>Where $g(t)$ is a trend function (non-periodic changes), $s(t)$ models seasonal changes, and $h(t)$ measures the effect of holidays (we don’t use this). We assume $\epsilon_t \sim \mathcal{N}(0, 1)$.</p>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Trained-using-gradient-descent,-but-it&#8217;s-fast!">Trained using gradient descent, but it&#8217;s fast!<a class="anchor-link" href="#Trained-using-gradient-descent,-but-it&#8217;s-fast!">&#182;</a></h1><h2 id="How-do-we-use-it:">How do we use it:<a class="anchor-link" href="#How-do-we-use-it:">&#182;</a></h2><p>3 models: 1 week, 1 month, 1 year
+Each one is fit on a set of regressors, which are columns from the cleaned observations table from earlier
+To add regressors:</p>
+
+</div>
+</div><div class="fragment">
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+<pre><code>model = Prophet(**params)
+model.add_regressor(“&lt;NAME OF COLUMN&gt;”)</code></pre>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Tells Prophet to include the feature when training</p>
+
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Feature-Selection-&amp;-Training:">Feature Selection &amp; Training:<a class="anchor-link" href="#Feature-Selection-&amp;-Training:">&#182;</a></h1>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
+<pre><code>def columnCleaner(path, columns, date="2011-02-14", normalize_sp5=True):
+
+    """
+    This function cleans and returns a dataframe that can be fit to our Prophet model.
+    path: the file path/csv path that we want to read
+    columns: the columns that we want to fit
+    date: the date range we want for the SP500
+    """
+
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    messy_obs = pd.read_csv(path)
+    # read the csv file
+
+    messy_obs["date"] = pd.to_datetime(messy_obs["date"])
+    # convert to date time
+
+    obs_pivot = messy_obs.pivot(values="value", index="date", columns="series_id")
+    # pivot the table
+    obs_pivot = obs_pivot[obs_pivot.index &gt;= date]
+
+    mu = obs_pivot["SP500"].mean()
+    s = obs_pivot["SP500"].std()
+
+    normalize = lambda col: (col - col.mean()) / col.std()
+    normed_obs = obs_pivot.apply(normalize, axis=0)
+    # normalize data
+
+    observations = normed_obs[normed_obs.index &gt;= date]
+    # filter out any dates that are before designated date
+
+    if normalize_sp5:
+        df = pd.DataFrame({"ds": observations.index, "y": observations["SP500"]})
+    else:
+        df = pd.DataFrame({"ds": observations.index, "y": obs_pivot["SP500"]})
+    df.set_index("ds", inplace=True)
+    # create the dataframe we return
+
+    # code above organizes table into usable format
+
+    for col in columns:
+        try:
+            fit = pd.DataFrame(
+                {"ds": observations.index, str(col): observations[str(col)]}
+            )
+        except:
+            print(f"Dropping Column: {col}")
+            continue
+        # create our table for the column entry in our columns list
+        fit.fillna(method="bfill", inplace=True)
+        fit.fillna(method="ffill", inplace=True)
+        # filter out any null values
+
+        fit_column = fit[str(col)]
+        # gets a series for our respective column
+
+        df[str(col)] = fit_column
+        # adds that column to our dataframe
+
+    df.reset_index(inplace=True)
+
+    return df, mu, s
+
+features = columnCleaner("data/observations_train.csv", columns=cols, normalize_sp5=False)
+m.fit(features)</code></pre>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
